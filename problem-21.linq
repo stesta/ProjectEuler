@@ -25,8 +25,8 @@ void Main()
   //Evaluate the sum of all the amicable numbers under 10000.
   
   var sums = Enumerable.Range(0,10000)
-                       .Select(x => Tuple.Create(x, Divisors(x).Sum()))
-                       .ToArray();
+                       .Select(x => Tuple.Create(x, Divisors(x, false).Sum()))
+                       .ToList();
                         
   var matches = sums.Where(x => x.Item2 < 10000 // exclude numbers out of range
                         && x.Item1 != x.Item2   // exclude numbers where d(n) = n
@@ -37,9 +37,31 @@ void Main()
                     .Dump();
 }
 
-public static IEnumerable<int> Divisors(int x)
+public IEnumerable<int> Divisors(long x, bool includeSelf = true)
 {
-  for (int i = 1; i < x; i++)
+  double sqrt = Math.Sqrt(x);
+  List<int> belowSqrt = new List<int>();
+
+  // get all divisors below the square root
+  for (int i = 1; i <= sqrt; i++)
+  {
     if (x % i == 0)
+    {
+      if (i != sqrt)
+        belowSqrt.Add(i);
+        
       yield return i;
+    }
+  }
+    
+  // return the top pairing of the numbers below the square root
+  belowSqrt.Reverse();
+  foreach (var i in belowSqrt)
+  {
+    int topPair = (int)(x / i);
+    if (!includeSelf && topPair == x)
+      continue;
+      
+    yield return topPair; 
+  }
 }
