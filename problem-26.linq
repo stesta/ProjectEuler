@@ -16,8 +16,9 @@
 void Main()
 {
   var nums = Enumerable.Range(2, 998)
-    .Select(n => UnitFractionCycleLength(n))
-    .Max()
+    .Select(n => new { n = n, cycle = UnitFractionCycleLength(n) })
+    .OrderByDescending(i => i.cycle)
+    //.FirstOrDefault()
     .Dump();
 }
 
@@ -25,8 +26,8 @@ void Main()
 int UnitFractionCycleLength(int n)
 {
     int remainder = 1;
-    int position = 1;
-    List<int> mods = new List<int>() { 1 };
+    int position = 0;
+    List<int> mods = new List<int>();
     
     while(position < n && remainder != 0)
     {
@@ -35,7 +36,7 @@ int UnitFractionCycleLength(int n)
        position++;
        
        if (mods.Contains(remainder))
-        return position - (mods.IndexOf(remainder));
+        return position - (mods.IndexOf(remainder) +1);
        
        mods.Add(remainder);
     }
