@@ -1,18 +1,5 @@
 <Query Kind="Program">
-  <Connection>
-    <ID>1bc2d5cd-0a7b-4e0f-b329-2f8f878c247f</ID>
-    <Persist>true</Persist>
-    <Server>srv-hsimdm</Server>
-    <NoPluralization>true</NoPluralization>
-    <NoCapitalization>true</NoCapitalization>
-    <Database>Salesforce_Mirror</Database>
-    <ShowServer>true</ShowServer>
-  </Connection>
   <Output>DataGrids</Output>
-  <NuGetReference>Dapper</NuGetReference>
-  <NuGetReference>DapperExtensions</NuGetReference>
-  <Namespace>Dapper</Namespace>
-  <Namespace>DapperExtensions</Namespace>
 </Query>
 
 void Main()

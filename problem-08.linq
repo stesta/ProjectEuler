@@ -1,10 +1,6 @@
 <Query Kind="Statements">
   <Output>DataGrids</Output>
-  <NuGetReference>Dapper</NuGetReference>
-  <NuGetReference>DapperExtensions</NuGetReference>
   <NuGetReference>MathNet.Numerics</NuGetReference>
-  <Namespace>Dapper</Namespace>
-  <Namespace>DapperExtensions</Namespace>
 </Query>
 
 var num = @"73167176531330624919225119674426574742355349194934" +

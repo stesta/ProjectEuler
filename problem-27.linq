@@ -1,9 +1,5 @@
-<Query Kind="Program">
+﻿<Query Kind="Program">
   <Output>DataGrids</Output>
-  <NuGetReference>Dapper</NuGetReference>
-  <NuGetReference>DapperExtensions</NuGetReference>
-  <Namespace>Dapper</Namespace>
-  <Namespace>DapperExtensions</Namespace>
 </Query>
 
 // Considering quadratics of the form:

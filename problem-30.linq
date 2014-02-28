@@ -1,18 +1,5 @@
 <Query Kind="Statements">
-  <Connection>
-    <ID>5b90eadf-080d-45ad-a510-72c47516cc62</ID>
-    <Persist>true</Persist>
-    <Server>srv-tdb1</Server>
-    <NoPluralization>true</NoPluralization>
-    <NoCapitalization>true</NoCapitalization>
-    <Database>Community_Custom</Database>
-    <ShowServer>true</ShowServer>
-  </Connection>
   <Output>DataGrids</Output>
-  <NuGetReference>Dapper</NuGetReference>
-  <NuGetReference>DapperExtensions</NuGetReference>
-  <Namespace>Dapper</Namespace>
-  <Namespace>DapperExtensions</Namespace>
 </Query>
 
 //Surprisingly there are only three numbers that can be written as the sum of fourth powers of their digits:

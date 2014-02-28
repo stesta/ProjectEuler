@@ -1,13 +1,4 @@
-<Query Kind="Statements">
-  <Connection>
-    <ID>5b90eadf-080d-45ad-a510-72c47516cc62</ID>
-    <Persist>true</Persist>
-    <Server>srv-tdb1</Server>
-    <NoPluralization>true</NoPluralization>
-    <NoCapitalization>true</NoCapitalization>
-    <Database>Community_Custom</Database>
-    <ShowServer>true</ShowServer>
-  </Connection>
+﻿<Query Kind="Statements">
   <Output>DataGrids</Output>
 </Query>
 

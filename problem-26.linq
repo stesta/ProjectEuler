@@ -1,10 +1,6 @@
 <Query Kind="Program">
   <Output>DataGrids</Output>
-  <NuGetReference>Dapper</NuGetReference>
-  <NuGetReference>DapperExtensions</NuGetReference>
   <NuGetReference>MathNet.Numerics</NuGetReference>
-  <Namespace>Dapper</Namespace>
-  <Namespace>DapperExtensions</Namespace>
 </Query>
 
 //Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.

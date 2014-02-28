@@ -1,19 +1,5 @@
 <Query Kind="Program">
-  <Connection>
-    <ID>2adecc64-0f49-40ac-87f2-fe4b1fbb11dd</ID>
-    <Persist>true</Persist>
-    <Server>srv-tdb1</Server>
-    <Database>Community6</Database>
-    <NoPluralization>true</NoPluralization>
-    <NoCapitalization>true</NoCapitalization>
-    <LinkedDb Server="srv-sqlis1">Rhino</LinkedDb>
-    <LinkedDb Server="srv-sqlis1">SitesTeam</LinkedDb>
-  </Connection>
   <Output>DataGrids</Output>
-  <NuGetReference>Dapper</NuGetReference>
-  <NuGetReference>DapperExtensions</NuGetReference>
-  <Namespace>Dapper</Namespace>
-  <Namespace>DapperExtensions</Namespace>
 </Query>
 
 //A perfect number is a number for which the sum of its proper divisors is exactly equal to the number. For example, the sum of the proper divisors of 28 would be 1 + 2 + 4 + 7 + 14 = 28, which means that 28 is a perfect number.
