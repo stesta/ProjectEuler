@@ -1,4 +1,4 @@
 Project Euler Solutions
 -----------------------
-
-Executable via LinqPad
+**C#** executable via LinqPad  
+**Haskell** executable via runhaskell  
