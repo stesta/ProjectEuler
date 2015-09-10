@@ -8,10 +8,10 @@
 
 void Main()
 {
-	(2 + FibonacciSeries(1, 2, 4000000)
+	FibonacciSeries(0, 1, 4000000)
 			.Where(x => x % 2 == 0)
-			.Sum())
-	.Dump();
+			.Sum()
+			.Dump();
 }
 
 private static Func<long, long, long, IEnumerable<long>> FibonacciSeries = new Func<long,long,long,IEnumerable<long>>(

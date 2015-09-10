@@ -36,7 +36,7 @@ private void InitializePyramid()
   {
     _pyramid = new List<int[]>();
     
-    using (System.IO.StreamReader sr = new StreamReader("c:/code/scripts/linq/projecteuler/problem67.txt"))
+    using (System.IO.StreamReader sr = new StreamReader("/data/problem67.txt"))
     {
       while(sr.Peek() >= 0)
       {
