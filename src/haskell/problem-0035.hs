@@ -6,7 +6,7 @@ import Math.Integers
 import Math.Primality
 
 main :: IO()
-main = do 
+main = do
     -- | can be improved: circular primes (other than 2) can contain only 1,3,7,9
     let answer = length $ circularPrimes $ takeWhile (<1000000) $ filter isPrime [1..1000000]
     print answer

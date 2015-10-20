@@ -4,9 +4,9 @@
 import Math.Integers
 
 main :: IO()
-main = do 
+main = do
     let products = [x * y | x <- [100..999], y <- [100..999]]
-        palindromes = filter (\n -> isPalindrome n) products
+        palindromes = filter isPalindrome products
         answer = maximum palindromes
-         
-    print answer 
+
+    print answer
