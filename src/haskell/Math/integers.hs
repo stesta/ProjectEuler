@@ -1,4 +1,6 @@
 module Math.Integers where
+import Numeric (showIntAtBase)
+import Data.Char (intToDigit)
 
 toIntegerArray :: Int -> [Int]
 toIntegerArray n  
@@ -11,3 +13,7 @@ fromIntegerArray = foldl addDigit 0
     
 isPalindrome :: Int -> Bool
 isPalindrome n = toIntegerArray n == reverse (toIntegerArray n)  
+
+isBinaryPalindrome :: Int -> Bool
+isBinaryPalindrome n = b == reverse b  
+    where b = showIntAtBase 2 intToDigit n ""
