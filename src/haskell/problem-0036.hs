@@ -6,6 +6,6 @@ import Math.Integers (isPalindrome, toBinary)
 
 main :: IO()
 main = do
-    -- | note the mod 2 is because a binary palindrome can never be an even number because they wouldn't start and end with a '1'
-    let answer = sum [x | x <- [1..1000000], x `mod` 2 /= 0 && isPalindrome x && isPalindrome (toBinary x)]
+    -- | note the 'odd' constraint is because a binary palindrome can never be an even number because they wouldn't start and end with a '1'
+    let answer = sum [x | x <- [1..1000000], odd x && isPalindrome x && isPalindrome (toBinary x)]
     print answer
