@@ -4,5 +4,5 @@
 main :: IO()
 main = do
    -- | prime factorization
-    let answer = foldl lcm 1 [1..20] :: Int
+    let answer = foldr1 lcm [1..20]
     print answer

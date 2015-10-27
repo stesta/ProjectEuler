@@ -7,8 +7,5 @@
 
 main :: IO()
 main = do
-    let sumSquare = sum [x^2 | x <- [1..100]]
-        squareSum = sum [1..100]^2
-        answer = squareSum - sumSquare :: Int
-
+    let answer = sum [1..100] ^2 - sum [x^2 | x <- [1..100]]
     print answer

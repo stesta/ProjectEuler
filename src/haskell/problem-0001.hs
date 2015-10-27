@@ -3,5 +3,5 @@
 
 main :: IO()
 main = do
-    let answer = sum $ filter (\x -> mod x 3 == 0 || mod x 5 == 0) [0..999]
+    let answer = sum [x | x <- [0..999], x `mod` 3 == 0 || x `mod` 5 == 0]
     print answer

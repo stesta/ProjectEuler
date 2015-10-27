@@ -5,8 +5,5 @@ import Math.Integers
 
 main :: IO()
 main = do
-    let products = [x * y | x <- [100..999], y <- [100..999]]
-        palindromes = filter isPalindrome products
-        answer = maximum palindromes
-
+    let answer = maximum [x | y <- [100..999], z <- [100..999], let x = y*z, isPalindrome x]
     print answer

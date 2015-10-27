@@ -16,8 +16,5 @@ main = do
     -- | 2m(m+n) = 1000;
     -- | m(m+n) = 500;
     -- | since m > n  m = 20; n = 5
-    let triplet = solveTriplet 20 5 -- | (200,376,425)
-        productOf (a,b,c) = a*b*c
-        answer = productOf triplet
-
+    let answer = product $ head $ triplets 1000
     print answer

@@ -6,5 +6,5 @@ import Math.Fibonacci
 
 main :: IO()
 main = do
-    let answer = sum $ filter (\x -> mod x 2 == 0 && x <= 4000000) $ take 100 fibonacci
+    let answer = sum [x | x <- takeWhile (<4000000) fibonacci, even x]
     print answer
