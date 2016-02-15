@@ -6,4 +6,8 @@ def even(seq):
         if x % 2 == 0:
             yield x
 
-print sum(takewhile(lambda x: x < 4000000, even(fibonacci())))
+def problem0002():
+    return sum(takewhile(lambda x: x < 4000000, even(fibonacci())))
+
+if (__name__ == '__main__'):
+    print problem0002()
