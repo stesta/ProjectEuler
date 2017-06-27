@@ -25,4 +25,4 @@ circularPrimes (x:xs)
     | all isPrime p = x :  circularPrimes xs
     | otherwise     = circularPrimes xs
     where
-        p = permutations x
+        p = circularPermutations x
