@@ -9,11 +9,8 @@ import Data.List
 
 main :: IO()
 main = do
-    let xs = filter (\n -> truncable div n 10) $
-                filter (\n -> truncable mod n 10) $ 
-                    filter (>7) primes
-
-    let answer = sum $ take 11 xs
+    let ns = [n | n <- filter (>7) primes, truncable div n 10 && truncable mod n 10]
+    let answer = sum $ take 11 ns
     print answer
 
 
