@@ -9,5 +9,5 @@ import Data.Ord (comparing)
 main :: IO () 
 main = do 
     let answer = fst . maximumBy (comparing snd) $ 
-                    [x | x <- map (\n -> (n, length $ triplesScaled n)) [1..999]]
+                    [x | x <- map (\n -> (n, length . triplesScaled $ n)) [1..999]]
     print answer
