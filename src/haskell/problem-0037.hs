@@ -6,6 +6,8 @@ import Math.Primality
 import Math.Integers
 import Data.List
 
+-- any potential truncable number must start or end with a previously found 
+-- truncable prime - our solution does not account for that
 
 main :: IO()
 main = do
