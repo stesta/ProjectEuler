@@ -16,5 +16,5 @@ main = do
     -- | 2m(m+n) = 1000;
     -- | m(m+n) = 500;
     -- | since m > n  m = 20; n = 5
-    let answer = product $ head $ triplets 1000
+    let answer = product $ head $ triples 1000
     print answer
