@@ -31,10 +31,11 @@ wordValue = foldl (\a b -> a + (val b)) 0
             | l == '\"' = 0
             | otherwise = (ord l) - 64
 
+csvParse :: Text.Text -> [String]
+csvParse = map Text.unpack . Text.splitOn (Text.pack ",") . Text.replace (Text.pack "\"") (Text.pack "")
 
 main :: IO ()
 main = do 
-    csvData <- Text.readFile "../../data/problem-42.txt"
-    let sanitized = map Text.unpack $ Text.splitOn (Text.pack ",") $ Text.replace (Text.pack "\"") (Text.pack "") csvData
-    let answer = length . filter (isTriangle 0) . map wordValue $ sanitized
+    file <- Text.readFile "../../data/problem-42.txt"
+    let answer = length . filter (isTriangle 0) . map wordValue $ csvParse file
     print answer
