@@ -6,19 +6,19 @@
 import Data.Set
 
 pentagonalSeries :: [Integer]
-pentagonalSeries = [(n*(3*n-1)) `div` 2 | n <- [1..]]
+pentagonalSeries = [(n*(3*n-1)) `div` 2 | n <- [1..5000]]
 
+-- original approach used `elem`. Using Data.Set and choosing not to use an infinite pentagonalSeries sped things up
+-- isPentagonal :: Integer -> Bool
+-- isPentagonal n = n `elem` ps
+--     where ps = takeWhile (<=n) pentagonalSeries
 
 isPentagonal :: Integer -> Bool
-isPentagonal n = n `elem` ps
-    where ps = takeWhile (<=n) pentagonalSeries
-
+isPentagonal = (`member` fromList pentagonalSeries)
 
 evaluatePair :: Integer -> Integer -> Bool
 evaluatePair pj pk = isPentagonal (pj+pk) && isPentagonal (pk-pj)
 
-
--- there must be a smarter approach... the correct answer takes too long to generate
 main :: IO ()
 main = do
     let answer = head [b-a | b <- pentagonalSeries, a <- takeWhile (<b) pentagonalSeries, evaluatePair a b] 
