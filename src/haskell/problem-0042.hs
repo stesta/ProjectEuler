@@ -4,3 +4,37 @@
 -- 
 -- By converting each letter in a word to a number corresponding to its alphabetical position and adding these values we form a word value. For example, the word value for SKY is 19 + 11 + 25 = 55 = t10. If the word value is a triangle number then we shall call the word a triangle word.
 -- Using words.txt (right click and 'Save Link/Target As...'), a 16K text file containing nearly two-thousand common English words, how many are triangle words?
+
+import Control.Applicative
+import Control.Monad
+import Data.Char (ord)
+import qualified Data.Text    as Text
+import qualified Data.Text.IO as Text
+
+triangle :: (RealFrac a, Integral b) => a -> [b]
+triangle n = floor tnum : triangle (n+1) 
+    where tnum = (n/2) * (n+1)
+
+
+-- allows us to stop searching when we encouter a higher triangle number
+isTriangle :: Int -> Int -> Bool
+isTriangle pos n
+    | n < (t!!pos)  = False
+    | otherwise     = n == (t!!pos) || isTriangle (pos+1) n
+    where t = triangle 1
+
+
+wordValue :: String -> Int 
+wordValue = foldl (\a b -> a + (val b)) 0 
+    where 
+        val l
+            | l == '\"' = 0
+            | otherwise = (ord l) - 64
+
+
+main :: IO ()
+main = do 
+    csvData <- Text.readFile "../../data/problem-42.txt"
+    let sanitized = map Text.unpack $ Text.splitOn (Text.pack ",") $ Text.replace (Text.pack "\"") (Text.pack "") csvData
+    let answer = length . filter (isTriangle 0) . map wordValue $ sanitized
+    print answer
