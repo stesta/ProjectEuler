@@ -1,4 +1,9 @@
-module Math.Primality where
+module Math.Primality
+  ( isPrime
+  , primes
+  , primeFactors
+  , circularPrimes
+  ) where
 import Math.Combinatorics
 
 isPrime :: Integer -> Bool

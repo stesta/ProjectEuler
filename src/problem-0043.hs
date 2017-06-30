@@ -13,11 +13,18 @@
 
 import Data.List
 
+
+main :: Integer
+main = sum . map read . filter interestingProperty $ pandigitals
+
+
 pandigitals :: [String]
 pandigitals = permutations "0123456789"
 
+
 checklist :: String -> [Int]
 checklist s = [x | p <- [1..7], let substr = (s!!p):(s!!(p+1)):(s!!(p+2)):[], let x = read substr]
+
 
 interestingProperty :: String -> Bool 
 interestingProperty s
@@ -31,9 +38,3 @@ interestingProperty s
           cl5 = mod (cl!!4) 11 == 0
           cl6 = mod (cl!!5) 13 == 0
           cl7 = mod (cl!!6) 17 == 0
-
-
-main :: IO ()
-main = do 
-    let answer = sum . map read . filter interestingProperty $ pandigitals
-    print answer

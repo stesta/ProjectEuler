@@ -6,8 +6,7 @@ import Math.Pythagorean (triplesScaled)
 import Data.List (maximumBy)
 import Data.Ord (comparing)
 
-main :: IO () 
-main = do 
-    let answer = fst . maximumBy (comparing snd) $ 
+
+problem_0039 :: (Int, Int)
+problem_0039 = fst . maximumBy (comparing snd) $ 
                     [x | x <- map (\n -> (n, length . triplesScaled $ n)) [1..999]]
-    print answer

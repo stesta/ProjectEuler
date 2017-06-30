@@ -1,6 +1,9 @@
-module Math.Pythagorean where
+module Math.Pythagorean
+  ( triples
+  , triplesScaled
+  ) where
 
--- | Euclid a = m^2-n^2; b = 2mn; c = m^2+n^2
+-- Euclid a = m^2-n^2; b = 2mn; c = m^2+n^2
 
 triples :: Integral a => a -> [[a]]
 triples l = [[a,b,c] 

@@ -12,6 +12,11 @@
 
 import Math.Primality
 
+
+problem_0046 :: Integer
+problem_0046 = head [oc | oc <- oddComposites, null . isPrimeTimesSquare $ oc]
+
+
 oddComposites :: [Integer]
 oddComposites = [n | n <- [9..], odd n, not $ isPrime n]
 
@@ -24,9 +29,3 @@ isPrimeTimesSquare :: Integer -> [(Integer, Integer)]
 isPrimeTimesSquare n = [(p,s) | p <- takeWhile (<n) primes
                               , s <- takeWhile (<n) squares
                               , p + (2*s) == n]
-                                
-
-main :: IO ()
-main = do 
-    let answer = head [oc | oc <- oddComposites, null . isPrimeTimesSquare $ oc]
-    print answer

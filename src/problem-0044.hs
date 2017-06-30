@@ -5,21 +5,24 @@
 
 import Data.Set
 
+
+problem_0044 :: Integer
+problem_0044 = head [b-a | b <- pentagonalSeries, a <- takeWhile (<b) pentagonalSeries, evaluatePair a b]
+
+
 pentagonalSeries :: [Integer]
 pentagonalSeries = [(n*(3*n-1)) `div` 2 | n <- [1..5000]]
+
 
 -- original approach used `elem`. Using Data.Set and choosing not to use an infinite pentagonalSeries sped things up
 -- isPentagonal :: Integer -> Bool
 -- isPentagonal n = n `elem` ps
 --     where ps = takeWhile (<=n) pentagonalSeries
 
+
 isPentagonal :: Integer -> Bool
 isPentagonal = (`member` fromList pentagonalSeries)
 
+
 evaluatePair :: Integer -> Integer -> Bool
 evaluatePair pj pk = isPentagonal (pj+pk) && isPentagonal (pk-pj)
-
-main :: IO ()
-main = do
-    let answer = head [b-a | b <- pentagonalSeries, a <- takeWhile (<b) pentagonalSeries, evaluatePair a b] 
-    print answer

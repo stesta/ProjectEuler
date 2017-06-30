@@ -10,10 +10,10 @@
 
 import Math.Integers
 
-main :: IO ()
-main = do
-    let answer = maximum $ filter isPandigital [fromIntegerArray $ multiplyUntilTooBig x 1 0 | x <- [1..9999]]
-    print answer
+
+problem_0038 :: Integer
+problem_0038 = maximum $ filter isPandigital [fromIntegerArray $ multiplyUntilTooBig x 1 0 | x <- [1..9999]]
+
 
 multiplyUntilTooBig ::  Integer -> Integer -> Int -> [Integer]
 multiplyUntilTooBig n idx len
@@ -21,4 +21,3 @@ multiplyUntilTooBig n idx len
     | otherwise = current : multiplyUntilTooBig n (idx + 1) (len + numDigits current)
     where 
         current = n*idx
-    

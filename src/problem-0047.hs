@@ -12,15 +12,15 @@
 import Math.Primality
 import Data.List (nub)
 
-uniqueFactors :: Integer -> Int
-uniqueFactors = length . nub . primeFactors
 
-main :: IO ()
-main = do
-    let answer = head [n | n <- [2..] 
+problem_0047 :: Integer
+problem_0047 = head [n | n <- [2..] 
                           , let n1 = uniqueFactors n
                           , let n2 = uniqueFactors (n+1)
                           , let n3 = uniqueFactors (n+2)
                           , let n4 = uniqueFactors (n+3)
                           , all (==4) [n1,n2,n3,n4]]
-    print answer
+
+
+uniqueFactors :: Integer -> Int
+uniqueFactors = length . nub . primeFactors

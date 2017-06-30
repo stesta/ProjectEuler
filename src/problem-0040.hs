@@ -6,10 +6,10 @@
 
 import Data.Char (digitToInt)
 
+
+main :: Int
+main = product . map parseInt $ map (10^) [0..6]
+
+
 parseInt :: Int -> Int
 parseInt dn = digitToInt $ (concatMap show [1..])!!(dn-1)
-
-main :: IO ()
-main = do 
-    let answer = product . map parseInt $ map (10^) [0..6]
-    print answer

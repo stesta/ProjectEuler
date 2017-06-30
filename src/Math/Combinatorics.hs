@@ -1,4 +1,6 @@
-module Math.Combinatorics where
+module Math.Combinatorics
+    ( circularPermutations
+    ) where
 import Data.List (tails)
 
 circularPermutations :: Integer -> [Integer]

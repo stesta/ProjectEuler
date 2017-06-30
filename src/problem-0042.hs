@@ -9,6 +9,18 @@ import Data.Char (ord)
 import qualified Data.Text    as Text
 import qualified Data.Text.IO as Text
 
+
+problem_0042 :: IO ()
+problem_0042 = do 
+    file <- Text.readFile "../../data/problem-42.txt"
+    let answer = length . filter (isTriangle) . map wordValue $ csvParse file
+    print answer
+
+
+csvParse :: Text.Text -> [String]
+csvParse = map Text.unpack . Text.splitOn (Text.pack ",") . Text.replace (Text.pack "\"") (Text.pack "")
+
+
 triangleSeries :: [Int]
 triangleSeries = [floor $ (n/2)*(n+1) | n <- [1..]]
 
@@ -23,14 +35,3 @@ wordValue = foldl (\a b -> a + (val b)) 0
     where val l
             | l == '\"' = 0
             | otherwise = (ord l) - 64
-
-
-csvParse :: Text.Text -> [String]
-csvParse = map Text.unpack . Text.splitOn (Text.pack ",") . Text.replace (Text.pack "\"") (Text.pack "")
-
-
-main :: IO ()
-main = do 
-    file <- Text.readFile "../../data/problem-42.txt"
-    let answer = length . filter (isTriangle) . map wordValue $ csvParse file
-    print answer
