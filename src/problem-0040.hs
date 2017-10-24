@@ -7,8 +7,9 @@
 import Data.Char (digitToInt)
 
 
-main :: Int
-main = product . map parseInt $ map (10^) [0..6]
+main :: IO ()
+main = print $ 
+    product . map parseInt $ map (10^) [0..6]
 
 
 parseInt :: Int -> Int

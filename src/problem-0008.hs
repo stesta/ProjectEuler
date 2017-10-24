@@ -1,5 +1,6 @@
 import Math.Primality
 
 
-problem_0008 :: [Integer]
-problem_0008 = primeFactors 40
+main :: IO ()
+main = print $ 
+    primeFactors 40

@@ -5,5 +5,6 @@
 import Math.Fibonacci
 
 
-problem_0002 :: Integer
-problem_0002 = sum [x | x <- takeWhile (<4000000) fibonacci, even x]
+main :: IO ()
+main = print $ 
+    sum [x | x <- takeWhile (<4000000) fibonacci, even x]

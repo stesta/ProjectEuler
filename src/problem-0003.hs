@@ -4,5 +4,6 @@
 import Math.Primality
 
 
-problem_0003 :: Integer
-problem_0003 = last $ primeFactors 600851475143
+main :: IO ()
+main = print $ 
+    last $ primeFactors 600851475143

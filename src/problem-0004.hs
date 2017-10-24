@@ -3,5 +3,7 @@
 
 import Math.Integers
 
-problem_0004 :: Integer
-problem_0004 = maximum [x | y <- [100..999], z <- [100..999], let x = y*z, isPalindrome x]
+
+main :: IO ()
+main = print $
+    maximum [x | y <- [100..999], z <- [100..999], let x = y*z, isPalindrome x]

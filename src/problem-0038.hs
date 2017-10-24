@@ -11,8 +11,9 @@
 import Math.Integers
 
 
-problem_0038 :: Integer
-problem_0038 = maximum $ filter isPandigital [fromIntegerArray $ multiplyUntilTooBig x 1 0 | x <- [1..9999]]
+main :: IO ()
+main = print $ 
+    maximum $ filter isPandigital [fromIntegerArray $ multiplyUntilTooBig x 1 0 | x <- [1..9999]]
 
 
 multiplyUntilTooBig ::  Integer -> Integer -> Int -> [Integer]

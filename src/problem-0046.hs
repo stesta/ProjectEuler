@@ -13,8 +13,9 @@
 import Math.Primality
 
 
-problem_0046 :: Integer
-problem_0046 = head [oc | oc <- oddComposites, null . isPrimeTimesSquare $ oc]
+main :: IO ()
+main = print $
+    head [oc | oc <- oddComposites, null . isPrimeTimesSquare $ oc]
 
 
 oddComposites :: [Integer]

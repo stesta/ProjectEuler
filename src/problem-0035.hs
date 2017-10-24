@@ -6,5 +6,6 @@ import Math.Primality
 
 
 -- can be improved: circular primes (other than 2) can contain only 1,3,7,9
-problem_0035 :: Int
-problem_0035 = length $ circularPrimes $ takeWhile (<1000000) primes
+main :: IO ()
+main = print $ 
+    length . circularPrimes . takeWhile (<1000000) $ primes

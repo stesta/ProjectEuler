@@ -7,6 +7,6 @@ import Data.List (maximumBy)
 import Data.Ord (comparing)
 
 
-problem_0039 :: (Int, Int)
-problem_0039 = fst . maximumBy (comparing snd) $ 
-                    [x | x <- map (\n -> (n, length . triplesScaled $ n)) [1..999]]
+main :: IO ()
+main = print $
+    fst . maximumBy (comparing snd) $ [x | x <- map (\n -> (n, length . triplesScaled $ n)) [1..999]]

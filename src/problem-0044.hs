@@ -6,8 +6,9 @@
 import Data.Set
 
 
-problem_0044 :: Integer
-problem_0044 = head [b-a | b <- pentagonalSeries, a <- takeWhile (<b) pentagonalSeries, evaluatePair a b]
+main :: IO ()
+main = print $ 
+    head [b-a | b <- pentagonalSeries, a <- takeWhile (<b) pentagonalSeries, evaluatePair a b]
 
 
 pentagonalSeries :: [Integer]

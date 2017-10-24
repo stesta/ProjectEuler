@@ -14,8 +14,9 @@
 import Data.List
 
 
-main :: Integer
-main = sum . map read . filter interestingProperty $ pandigitals
+main :: IO ()
+main = print $ 
+    sum . map read . filter interestingProperty $ pandigitals
 
 
 pandigitals :: [String]

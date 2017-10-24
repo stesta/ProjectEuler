@@ -10,8 +10,8 @@ import qualified Data.Text    as Text
 import qualified Data.Text.IO as Text
 
 
-problem_0042 :: IO ()
-problem_0042 = do 
+main :: IO ()
+main = do 
     file <- Text.readFile "../../data/problem-42.txt"
     let answer = length . filter (isTriangle) . map wordValue $ csvParse file
     print answer

@@ -8,5 +8,6 @@
 import Math.Pythagorean
 
 
-problem_0009 :: Integer
-problem_0009 = product $ head $ triples 1000
+main :: IO ()
+main = print $ 
+    product . head . triples $ 1000

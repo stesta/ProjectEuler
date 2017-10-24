@@ -13,13 +13,14 @@ import Math.Primality
 import Data.List (nub)
 
 
-problem_0047 :: Integer
-problem_0047 = head [n | n <- [2..] 
-                          , let n1 = uniqueFactors n
-                          , let n2 = uniqueFactors (n+1)
-                          , let n3 = uniqueFactors (n+2)
-                          , let n4 = uniqueFactors (n+3)
-                          , all (==4) [n1,n2,n3,n4]]
+main :: IO ()
+main = print $ 
+    head [n | n <- [2..] 
+            , let n1 = uniqueFactors n
+            , let n2 = uniqueFactors (n+1)
+            , let n3 = uniqueFactors (n+2)
+            , let n4 = uniqueFactors (n+3)
+            , all (==4) [n1,n2,n3,n4]]
 
 
 uniqueFactors :: Integer -> Int

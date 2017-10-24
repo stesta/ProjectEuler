@@ -4,5 +4,6 @@
 import Math.Primality (primes)
 
 
-problem_0007 :: Integer
-problem_0007 = primes !! (10001-1)
+main :: IO ()
+main = print $ 
+    primes !! (10001-1)

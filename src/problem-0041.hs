@@ -6,8 +6,9 @@ import Data.Char (intToDigit)
 import Data.List (permutations)
 
 
-problem_0041 :: Integer
-problem_0041 = maximum . filter isPrime $ pandigitals
+main :: IO ()
+main = print $ 
+    maximum . filter isPrime $ pandigitals
 
 
 -- generate a list of pandigitals by permuting "123", "1234" ... "123456789"

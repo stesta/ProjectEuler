@@ -10,9 +10,11 @@ import Data.List
 -- any potential truncable number must start or end with a previously found 
 -- truncable prime - our solution does not account for that
 
-problem_0037 :: Integer
-problem_0037 = sum $ take 11 ns
-    where ns = [n | n <- filter (>7) primes, truncable div n 10 && truncable mod n 10]
+main :: IO ()
+main = do
+    let answer = sum $ take 11 ns
+                    where ns = [n | n <- filter (>7) primes, truncable div n 10 && truncable mod n 10]
+    print answer
 
 
 -- | f = function to apply (mod or div)
