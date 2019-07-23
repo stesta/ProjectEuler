@@ -7,9 +7,22 @@
 
 -- Which prime, below one-million, can be written as the sum of the most consecutive primes?
 
-import Math.Primality (primes)
+import Math.Primality (primes, isPrime)
+import Data.List (find)
+import Data.Maybe (mapMaybe)
 
 main :: IO ()
 main = print $ 
-    takeWhile (<500000) primes
+    head $ mapMaybe (findPrime . consecSums) [maxconsec,maxconsec-1..2]
 
+maxconsec :: Int
+maxconsec = length . takeWhile (<1000000) $ sums
+
+findPrime :: [Integer] -> Maybe Integer
+findPrime = find isPrime . takeWhile (<1000000)
+
+consecSums :: Int -> [Integer]
+consecSums w = zipWith (-) (drop w sums) sums
+
+sums :: [Integer]
+sums = scanl1 (+) primes
