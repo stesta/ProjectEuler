@@ -4,16 +4,16 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 383af572fe5c6a9444e18f2cd12f2debc7e37a9441c5dd23272bda923eabda72
+-- hash: 6f72cf73085f9f4bffc2e7e9e190d593580d46f9aec939b28eacc8a53d1ad2ec
 
 name:           ProjectEuler
 version:        0.1.0.0
 description:    Please see the README on GitHub at <https://github.com/githubuser/ProjectEuler#readme>
-homepage:       https://github.com/githubuser/ProjectEuler#readme
-bug-reports:    https://github.com/githubuser/ProjectEuler/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2021 Author name here
+homepage:       https://github.com/stesta/ProjectEuler#readme
+bug-reports:    https://github.com/stesta/ProjectEuler/issues
+author:         Steve Testa
+maintainer:     steve@testasoftware.com
+copyright:      2021 Steve Testa
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
@@ -23,11 +23,16 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/ProjectEuler
+  location: https://github.com/stesta/ProjectEuler
 
 library
   exposed-modules:
       Lib
+      Math.Combinatorics
+      Math.Integers
+      Math.Primality
+      Math.Pythagorean
+      Math.Series
   other-modules:
       Paths_ProjectEuler
   hs-source-dirs:
