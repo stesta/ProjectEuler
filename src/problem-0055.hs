@@ -14,7 +14,7 @@ import Math.Integers (reverseDigits, isPalindrome)
 
 main :: IO ()
 main = do
-    print $ length [x | x <- [1..10000], isLychrel x]
+    print $ length . filter isLychrel $ [1..10000]
 
 lychrelStep :: Integer -> Integer 
 lychrelStep n = n + reverseDigits n
@@ -24,7 +24,7 @@ lychrelSeq n = next:lychrelSeq next
     where next = lychrelStep n
 
 isLychrel :: Integer -> Bool 
-isLychrel = not . last . takeWhileInclusive (==False) . map isPalindrome . take 50 . lychrelSeq
+isLychrel = not . any isPalindrome . take 50 . lychrelSeq
 
 takeWhileInclusive :: (a -> Bool) -> [a] -> [a]
 takeWhileInclusive _ [] = []
