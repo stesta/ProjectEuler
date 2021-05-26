@@ -11,6 +11,9 @@ toIntegerArray n
 fromIntegerArray :: [Integer] -> Integer
 fromIntegerArray = read . concatMap show
 
+reverseDigits :: Integer -> Integer 
+reverseDigits = read . reverse . show
+
 numDigits :: Integer -> Int 
 numDigits = length . show
 
