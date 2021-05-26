@@ -9,9 +9,7 @@
 -- part of an eight prime value family.
 
 import Math.Primality
-import Text.Replace
 
 main :: IO ()
-main = do
-    let answer = 4
-    return answer
+main = print $
+    0
