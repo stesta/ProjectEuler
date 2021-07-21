@@ -7,6 +7,15 @@ let isPrime n =
     | _ -> [2 .. sqrt'] |> List.forall (fun x -> n % x <> 0)
 
 
+let primes = 
+    let rec f x = 
+        seq { yield x 
+              yield! f (x+2) }
+    Seq.append [2] (f 3) 
+    |> Seq.cache 
+    |> Seq.filter (fun x -> Primality.isPrime x) 
+
+
 // credit:
 // http://mark-dot-net.blogspot.com/2013/11/finding-prime-factors-in-f.html
 // https://jeremybytes.blogspot.com/2016/07/getting-prime-factors-in-f-with-good.html
