@@ -1,10 +1,10 @@
 #!fsharp
 
 #r "nuget: MathNet.Numerics"
-#r "nuget: MathNet.Numerics.FSharp"
+#r "nuget: MathNet.Numerics.FSharp, *-*"
 
-#load "Math/Primality.fs"
-#load "Math/Series.fs"
+#load "src/Math/Primality.fs"
+#load "src/Math/Series.fs"
 
 open MathNet.Numerics
 
@@ -36,7 +36,10 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 
 #!fsharp
 
-Seq.takeWhile (fun x -> x <= 4000000) Series.fibonacci
+// MathNet.Numerics also has a built-in function:
+// Generate.Fibonacci 40
+Series.fibonacci 
+|> Seq.takeWhile (fun x -> x <= 4000000) 
 |> Seq.filter (fun x -> x % 2 = 0)
 |> Seq.sum
 
@@ -49,6 +52,10 @@ The prime factors of 13195 are 5, 7, 13 and 29.
 
 What is the largest prime factor of the number 600851475143 ?
 
+#!fsharp
+
+Primality.factors 600851475143L |> List.max
+
 #!markdown
 
 Problem 4 - Largest palindrome product
@@ -57,6 +64,18 @@ Problem 4 - Largest palindrome product
 A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
 
 Find the largest palindrome made from the product of two 3-digit numbers.
+
+#!fsharp
+
+let isPalindrome n =
+    let s = n.ToString()
+    s = String(s.ToCharArray() |> Array.rev)
+
+[ for j in 100 .. 999 do 
+    for k in 100 .. 999 -> 
+        j * k ]
+|> Seq.filter (fun x -> isPalindrome x)
+|> Seq.max
 
 #!markdown
 
